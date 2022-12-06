@@ -124,7 +124,7 @@
     </div>
   
   </div>
-  <button on:click={shuffle} class="mx-auto border max-w-sm w-full font-serif hover:bg-white active:font-bold text-yellow-300">random seat</button>
+  <button on:click={shuffle} class="mx-auto border max-w-sm w-full font-serif hover:bg-white active:font-bold text-yellow-300">shuffle</button>
 </main>
 
 <style>
