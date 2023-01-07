@@ -3,7 +3,7 @@
   let student_data = data;
   let date = new Date();
   let year = date.getFullYear();
-  let month = date.getMonth();
+  let month = date.getMonth()+1;
   let day = date.getDay();
   function shuffle(){
     for(let i=20;i>1;i--){
