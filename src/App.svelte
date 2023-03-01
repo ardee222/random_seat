@@ -4,7 +4,7 @@
   let date = new Date();
   let year = date.getFullYear();
   let month = date.getMonth()+1;
-  let day = date.getDay();
+  let day = date.getDate();
   function shuffle(){
     for(let i=20;i>1;i--){
       setTimeout(()=>{
@@ -27,7 +27,8 @@
   }
 </script>
 
-<main class="max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
+<!--bg-slate-700-->
+<main class="max-w-md w-full max-h-screen h-screen bg-slate-600 mx-auto flex flex-col">
   <div class="relative m-4">
     <div class="absolute top-0 right-0 text-white font-serif text-xs">{year}年{month}月{day}日</div>
   </div>
@@ -124,7 +125,7 @@
     </div>
   
   </div>
-  <button on:click={shuffle} class="mx-auto border max-w-sm w-full font-serif hover:bg-white active:font-bold text-yellow-300">shuffle</button>
+  <button on:click={shuffle} class="mx-auto border max-w-sm w-full font-serif hover:bg-white active:font-bold text-white">shuffle</button>
 </main>
 
 <style>
