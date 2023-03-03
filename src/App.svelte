@@ -1,14 +1,17 @@
 <script>
   import data from "./data/data.json"
   let student_data = data;
-  let date = new Date();
-  let year = date.getFullYear();
-  let month = date.getMonth()+1;
-  let day = date.getDay();
+  let today = new Date();
+  let year = today.getFullYear();
+  let month = today.getMonth()+1;
+  let date = today.getDate();
+  let data_names
   function shuffle(){
     for(let i=20;i>1;i--){
       setTimeout(()=>{
       student_data = student_data.sort(() => {return Math.random() - 0.5})
+      data_names = []
+      student_data.forEach((element)=>{data_names.push(element.name)})
       },i*200)}
   }
   let row1,row2,row3,row4,row5,row6,row7
@@ -25,11 +28,19 @@
     let board = clicked ? "其實我叫黑板" : "綠板"
     document.getElementsByName('black_board')[0].innerText = board;
   }
+
+
+  //debugging
+  window.onload = ()=>{
+    setTimeout(()=>{console.log(data_names)},10000)
+    console.log(data_names)
+  }
+
 </script>
 
 <main class="max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
   <div class="relative m-4">
-    <div class="absolute top-0 right-0 text-white font-serif text-xs">{year}年{month}月{day}日</div>
+    <div class="absolute top-0 right-0 text-white font-serif text-xs">{year}年{month}月{date}日</div>
   </div>
   <div name="container" class="flex my-8 h-72 mx-auto font-serif border px-4 py-8 space-x-3">
     <div name="left_container" class="relative flex h-full">
