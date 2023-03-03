@@ -1,18 +1,12 @@
 <script>
   import data from "./data/data.json"
   let student_data = data;
-<<<<<<< HEAD
   let today = new Date();
   let year = today.getFullYear();
   let month = today.getMonth()+1;
   let date = today.getDate();
   let data_names
-=======
-  let date = new Date();
-  let year = date.getFullYear();
-  let month = date.getMonth()+1;
-  let day = date.getDate();
->>>>>>> 9b7dfb45bf9b74ea407690eb0c1ff02d9729f819
+
   function shuffle(){
     for(let i=20;i>1;i--){
       setTimeout(()=>{
@@ -46,7 +40,7 @@
 </script>
 
 <!--bg-slate-700-->
-<main class="max-w-md w-full max-h-screen h-screen bg-slate-600 mx-auto flex flex-col">
+<main class="max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
   <div class="relative m-4">
     <div class="absolute top-0 right-0 text-white font-serif text-xs">{year}年{month}月{date}日</div>
   </div>
@@ -143,7 +137,12 @@
     </div>
   
   </div>
-  <button on:click={shuffle} class="mx-auto border max-w-sm w-full font-serif hover:bg-white active:font-bold text-white">shuffle</button>
+  <div on:mouseup={shuffle} class="flex items-center justify-center space-x-2 mx-auto border max-w-sm w-full font-serif hover:bg-white active:font-bold text-white">
+    <div>抽</div>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
+    </svg>
+  </div>
 </main>
 
 <style>
