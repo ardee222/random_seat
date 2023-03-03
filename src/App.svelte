@@ -1,11 +1,18 @@
 <script>
   import data from "./data/data.json"
   let student_data = data;
+<<<<<<< HEAD
   let today = new Date();
   let year = today.getFullYear();
   let month = today.getMonth()+1;
   let date = today.getDate();
   let data_names
+=======
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth()+1;
+  let day = date.getDate();
+>>>>>>> 9b7dfb45bf9b74ea407690eb0c1ff02d9729f819
   function shuffle(){
     for(let i=20;i>1;i--){
       setTimeout(()=>{
@@ -38,7 +45,8 @@
 
 </script>
 
-<main class="max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
+<!--bg-slate-700-->
+<main class="max-w-md w-full max-h-screen h-screen bg-slate-600 mx-auto flex flex-col">
   <div class="relative m-4">
     <div class="absolute top-0 right-0 text-white font-serif text-xs">{year}年{month}月{date}日</div>
   </div>
@@ -135,7 +143,7 @@
     </div>
   
   </div>
-  <button on:click={shuffle} class="mx-auto border max-w-sm w-full font-serif hover:bg-white active:font-bold text-yellow-300">shuffle</button>
+  <button on:click={shuffle} class="mx-auto border max-w-sm w-full font-serif hover:bg-white active:font-bold text-white">shuffle</button>
 </main>
 
 <style>
