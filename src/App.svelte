@@ -30,16 +30,17 @@
     document.getElementsByName('black_board')[0].innerText = board;
   }
 
-
+  let come_on;
+  $:come_on = true;
   //debugging
-  window.onload = ()=>{
-    setTimeout(()=>{console.log(data_names)},10000)
-    console.log(data_names)
-  }
-
 </script>
 
 <!--bg-slate-700-->
+{#if come_on}
+<div on:mouseup={()=>{come_on = false}} class="flex justify-center items-center max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
+  <div class="text-4xl text-white">四校加油</div>
+</div>
+{/if}
 <main class="max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
   <div class="relative m-4">
     <div class="absolute top-0 right-0 text-white font-serif text-xs">{year}年{month}月{date}日</div>
