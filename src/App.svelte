@@ -38,7 +38,7 @@
 <!--bg-slate-700-->
 {#if come_on}
 <div on:mouseup={()=>{come_on = false}} class="flex justify-center items-center max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
-  <div class="text-4xl text-white">四校加油</div>
+  <div class="text-5xl text-white">四校加油</div>
 </div>
 {/if}
 <main class="max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
