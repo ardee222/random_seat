@@ -26,7 +26,7 @@
   let clicked = false;
   function change_board(){
     clicked = !clicked;
-    let board = clicked ? "其實我叫黑板" : "綠板"
+    let board = clicked ? "黑板" : "綠板"
     document.getElementsByName('black_board')[0].innerText = board;
   }
 
