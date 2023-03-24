@@ -30,8 +30,8 @@
     document.getElementsByName('black_board')[0].innerText = board;
   }
 
-  let come_on = false;
-  $:come_on = true;
+  let come_on;
+  $:come_on = false;
   //debugging
 </script>
 
