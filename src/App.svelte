@@ -40,11 +40,16 @@
 
   function change_board(){
     clicked = !clicked;
-    let board = clicked ? "其實我叫黑板" : "綠板"
+    let board = clicked ? "黑板" : "綠板"
     document.getElementsByName('black_board')[0].innerText = board;
   }
 
+<<<<<<< HEAD
   //console.log(student_data[1])
+=======
+  let come_on;
+  $:come_on = false;
+>>>>>>> 38dbd50853006661dab59ebe1d98b1907ae2ee9e
   //debugging
 </script>
 
