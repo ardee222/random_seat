@@ -7,40 +7,48 @@
   let date = today.getDate();
   let data_names
 
-  function shuffle(){
-    for(let i=20;i>1;i--){
-      setTimeout(()=>{
-      student_data = student_data.sort(() => {return Math.random() - 0.5})
-      data_names = []
-      student_data.forEach((element)=>{data_names.push(element.name)})
-      },i*200)}
-  }
-  let row1,row2,row3,row4,row5,row6,row7
-  $: row1 = student_data.slice(0,5);
-  $: row2 = student_data.slice(5,10);
-  $: row3 = student_data.slice(10,16);
-  $: row4 = student_data.slice(16,22);
-  $: row5 = student_data.slice(22,28);
-  $: row6 = student_data.slice(28,33);
-  $: row7 = student_data.slice(33,39);
-  let clicked = false;
+    
+    let row1,row2,row3,row4,row5,row6,row7
+    $: row1 = student_data.slice(0,5);
+    $: row2 = student_data.slice(5,10);
+    $: row3 = student_data.slice(10,16);
+    $: row4 = student_data.slice(16,22);
+    $: row5 = student_data.slice(22,28);
+    $: row6 = student_data.slice(28,33);
+    $: row7 = student_data.slice(33,39);
+    let clicked = false;
+    
+    function shuffle(){
+      
+      for(let i=20;i>1;i--){
+        setTimeout(()=>{
+        student_data = student_data.sort(() => {return Math.random() - 0.5})
+        data_names = []
+        student_data.forEach((element)=>{data_names.push(element.name)})
+        },i*200)}
+        setTimeout(() => {
+          console.log(row1[0])
+          if(row1[0].name === "盧曉彤" || row1[1].name === "盧曉彤"){student_data = student_data.sort(() => {return Math.random() - 0.5})}
+          if(row2[0].name === "盧曉彤" || row2[1].name === "盧曉彤"){student_data = student_data.sort(() => {return Math.random() - 0.5})}
+          if(row3[0].name === "盧曉彤" || row3[1].name === "盧曉彤"){student_data = student_data.sort(() => {return Math.random() - 0.5})}
+          if(row4[0].name === "盧曉彤" || row4[1].name === "盧曉彤"){student_data = student_data.sort(() => {return Math.random() - 0.5})}
+          if(row5[0].name === "盧曉彤" || row5[1].name === "盧曉彤"){student_data = student_data.sort(() => {return Math.random() - 0.5})}
+          if(row6[0].name === "盧曉彤" || row6[1].name === "盧曉彤"){student_data = student_data.sort(() => {return Math.random() - 0.5})}
+          if(row7[0].name === "盧曉彤" || row7[1].name === "盧曉彤"){student_data = student_data.sort(() => {return Math.random() - 0.5})}
+        }, 4200);
+      }
+
   function change_board(){
     clicked = !clicked;
     let board = clicked ? "其實我叫黑板" : "綠板"
     document.getElementsByName('black_board')[0].innerText = board;
   }
 
-  let come_on;
-  $:come_on = true;
+  //console.log(student_data[1])
   //debugging
 </script>
 
 <!--bg-slate-700-->
-{#if come_on}
-<div on:mouseup={()=>{come_on = false}} class="flex justify-center items-center max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
-  <div class="text-5xl text-white">四校加油</div>
-</div>
-{/if}
 <main class="max-w-md w-full max-h-screen h-screen bg-slate-700 mx-auto flex flex-col">
   <div class="relative m-4">
     <div class="absolute top-0 right-0 text-white font-serif text-xs">{year}年{month}月{date}日</div>
