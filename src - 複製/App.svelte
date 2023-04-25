@@ -44,9 +44,10 @@
     document.getElementsByName('black_board')[0].innerText = board;
   }
 
+
+  let come_on;
+  $:come_on = false;
   //debugging
-
-
 </script>
 
 <!--bg-slate-700-->
